@@ -1,0 +1,30 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+     Scanner s=new Scanner(System.in);
+     int T=s.nextInt();
+    
+         for(int i=0;i<T;i++) {
+            int b=s.nextInt();
+            int w=s.nextInt();
+            int bc=s.nextInt();
+            int wc=s.nextInt();
+            int z=s.nextInt();
+             long minBlackPrice = Math.min(bc, wc + z);
+                
+                
+                long minWhitePrice = Math.min(wc, bc + z);
+                
+               
+                System.out.println((minBlackPrice * b) + (minWhitePrice * w));
+         }
+     }
+}
