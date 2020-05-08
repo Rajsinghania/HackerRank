@@ -1,0 +1,46 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the chocolateFeast function below.
+    static int chocolateFeast(int n, int c, int m) {
+        int noOfChoco=n/c;
+        int wrappers =noOfChoco;
+        int count=0;
+        while(wrappers>=m){
+            int t1=wrappers/m;
+            wrappers=wrappers%m+t1;
+            count=count+t1;
+        }
+        int totalChoco=count+noOfChoco;
+        return totalChoco;
+
+
+    }
+
+   public static void main(String[] args)   {
+        Scanner s=new Scanner(System.in);
+         int t = s.nextInt();
+       for (int tItr = 0; tItr < t; tItr++) {
+           
+            int n = s.nextInt();
+
+            int c = s.nextInt();
+
+            int m = s.nextInt();
+
+            int result = chocolateFeast(n, c, m);
+            System.out.println(result);
+          
+           
+        }
+   }
+
+       
+}
