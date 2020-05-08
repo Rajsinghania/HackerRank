@@ -1,0 +1,38 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+       long i=s.nextInt();
+       long j=s.nextInt();
+       long k=s.nextInt();
+       long n=0;
+       int count=0;
+       for(long l=i;l<=j;l++) {
+           n=l;
+           long x=reverse(n);
+           long value=Math.abs(x-n);
+           if(value%k==0) {
+               count++;
+           }
+       }
+       System.out.println(count);
+    }
+    public static long reverse(long m) {
+        long sum=0;
+        while(m>=1) {
+            long r=m%10;
+            sum=(sum*10)+r;
+            m=m/10;
+        }
+        return sum;
+    }
+
+ }
