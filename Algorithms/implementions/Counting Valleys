@@ -1,0 +1,35 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        String str=s.next();
+        System.out.println(count(n,str));
+    }
+    public static int count(int n, String str){
+        int valley=0;
+        int altitude=0;
+        for(int i=0;i<n;i++){
+            char ch=str.charAt(i);
+            /*Below sea level,so we have to check when 
+            Uper leve touch origin line from down level it means 
+            altitude zero*/
+            if(ch=='U'){
+                altitude++;
+                if(altitude==0){
+                    valley++;
+                }
+            }else{
+                altitude--;
+            }
+        }
+        return valley;
+    }
+}
