@@ -1,0 +1,27 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+        long t = s.nextLong();
+        long uppervalue = 3;
+        long lowervalue = 1;
+        while (!(t >= lowervalue && t <= uppervalue)) {
+            lowervalue = uppervalue + 1;
+            uppervalue = (uppervalue * 2) + 3;
+
+        }
+
+        System.out.println(1 + uppervalue - t);
+
+     
+    }
+}
