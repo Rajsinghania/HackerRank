@@ -1,0 +1,57 @@
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String [] args){
+         LinkedList<Integer>list=new LinkedList<>();
+            Scanner s=new Scanner(System.in);
+            int n=s.nextInt();
+            int a[]=new int[n];
+           
+            for(int i=0;i<n;i++){
+                a[i]=s.nextInt();
+                
+            }
+            Arrays.sort(a);
+            for(int i=0;i<n;i++) {
+                list.addAll(Arrays.asList(a[i]));
+            }
+            
+            cutTheSticks(list);
+            }
+     public static void cutTheSticks(LinkedList<Integer> list) {
+         LinkedList<Integer> list1=new LinkedList<>();
+         
+         int t=list.size();
+         while(t>=1) {
+             int sum=0;
+             System.out.println(t);
+            
+             if(list.size()==0) {
+                 break;
+             }else {
+             for(int i:list) {
+                 int x=i-list.getFirst();
+                 if(x>0) {
+                     list1.add(x);
+                    }else {
+                        sum++;
+                    }
+                 }
+             //System.out.println(list1);
+             }
+             int size=list.size()-list1.size();
+              t=t-size;
+             list.clear();
+             list.addAll(list1);
+              list1.clear();
+             
+             
+         }
+     }
+}
