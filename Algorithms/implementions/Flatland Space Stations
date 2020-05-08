@@ -1,0 +1,43 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int space=s.nextInt();
+        int a[]=new int[space];
+        for(int i=0;i<space;i++) {
+            a[i]=s.nextInt();
+        }
+        maxDistance(a,n);
+            
+    }
+    public static void maxDistance(int a[],int n) {
+        
+        if(a.length==n) {
+            System.out.println("0");
+        
+        }else {
+            int sum=0;
+            int max=0;
+            for(int i=0;i<n;i++) {
+                 sum=i;
+                 int min=Integer.MAX_VALUE;
+                 for(int j=0;j<a.length;j++) {
+                    int t=Math.abs(sum-a[j]);
+                     min=Math.min(min,t);
+                 }
+                  max=Math.max(min,max);
+            }
+            System.out.println(max);
+        }
+        
+    }
+}
