@@ -1,0 +1,40 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+        LinkedList<Integer> list=new LinkedList<>();
+        int n=s.nextInt();
+        int k=s.nextInt();
+        int m=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++) {
+            a[i]=s.nextInt();
+            list.addAll(Arrays.asList(a[i]));
+            
+        }
+        value(s,k,m,list,a);
+       
+        
+        
+    }
+    public static void value(Scanner s,int k,int m,LinkedList<Integer> list,int a[])
+        {
+            for(int i=0;i<k;i++) {
+                int t=list.pollLast();
+                list.offerFirst(t);
+                }
+            for(int i=0;i<m;i++) {
+            int x=s.nextInt();
+            int t=list.get(x);
+            System.out.println(t);
+            }
+            }
+}
