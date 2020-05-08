@@ -1,0 +1,61 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+  public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+      
+        int a[][]=new int[n][n];
+        for(int i=0;i<n;i++) {
+            //here we can take strings(1112)
+            String str=s.next();
+            //the we can change to char array
+            char ch[]=str.toCharArray();
+            for(int j=0;j<n;j++) {
+                //here again we can merge them with  from char to string(1 1 1 2)
+                String x1=ch[j]+"";
+                //now we can change string to integer
+                a[i][j]=Integer.parseInt(x1);
+            }
+             
+        }
+        cavity(a);
+       
+        
+    }
+    //from here we can treat as integer array
+    public static void cavity(int a[][]) {
+        for(int i=1;i<a.length-1;i++) {
+            for(int j=1;j<a.length-1;j++) {
+                int element=a[i][j];
+                int up=a[i-1][j];
+                int down=a[i+1][j];
+                int right=a[i][j+1];
+                int left=a[i][j-1];
+                if(element>up && element>down && element>right && element>left) {
+                    a[i][j]=101;
+                }
+            }
+        }
+        //now again we have to convert Integer array to string
+        for(int i=0;i<a.length;i++) {
+            String str="";
+            for(int j=0;j<a.length;j++) {
+                if(a[i][j]==101) {
+                    str=str+"X";
+                }else {
+                    str=str+a[i][j];
+                }
+            }
+            System.out.println(str);
+        }
+    }
+    
+}
