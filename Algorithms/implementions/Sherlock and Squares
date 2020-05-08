@@ -1,0 +1,26 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+        int t=s.nextInt();
+        while(t>0){
+            int a=s.nextInt();
+            int b=s.nextInt();
+            double x=Math.sqrt(a);
+            double y=Math.sqrt(b);
+            int f=(int)Math.floor(y);
+            int c=(int)Math.ceil(x);
+            int numbers=(f-c)+1;
+            System.out.println(numbers);
+            t--;
+
+        }
+ }
+}
