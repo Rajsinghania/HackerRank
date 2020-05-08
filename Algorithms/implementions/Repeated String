@@ -1,0 +1,32 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String []args){
+         Scanner s=new Scanner(System.in);
+         String str=s.next();
+         long n=s.nextLong();
+         int len=str.length();
+         long count=0;
+         char [] ch=str.toCharArray();
+                 
+         for(int i=0;i<len;i++) {
+             if(ch[i]=='a') {
+                 count++;
+             }
+         }
+         count=count*(n/len);
+     for(int j=0;j<n%len;j++) {
+         if(ch[j]=='a') {
+             count++;
+         }
+     }
+     System.out.println(count);
+    }
+}
