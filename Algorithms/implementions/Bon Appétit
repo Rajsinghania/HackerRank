@@ -1,0 +1,41 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main (String[] args) {
+    Scanner s=new Scanner(System.in);
+    LinkedList<Integer> list=new LinkedList<>();
+    int n=s.nextInt();
+    int k=s.nextInt();
+    int a[]=new int[n];
+    int sum=0;
+    for(int i=0;i<n;i++) {
+        a[i]=s.nextInt();
+        list.add(a[i]);
+    }
+    
+    if(k<list.size()) {
+    list.remove(k);
+    }
+    //System.out.println(list);
+    for(int i:list) {
+        sum=sum+i;
+    }
+    int b=s.nextInt();
+    //System.out.println(sum);
+    int t=sum/2;
+    int Bcharged=b-t;
+    if(Bcharged==0) {
+        System.out.println("Bon Appetit");
+    }else {
+        System.out.println(Bcharged);
+    }
+
+  }
+}
