@@ -1,0 +1,49 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String []args){
+         
+           Scanner s= new Scanner(System.in);
+           int n=s.nextInt();
+           int a[]=new int[n];
+           for(int i=0;i<n;i++) {
+               a[i]=s.nextInt();
+           }
+           noOfBreads(a);
+           
+          }
+     public static void noOfBreads(int a[]) {
+         int bread=0;
+         int count=0;
+         for(int i=0;i<a.length;i++) {
+             count=a[i]+count;
+             if(i==a.length-1) {
+                 //if last person ended with odd numbers of breads
+                 if(count%2==1) {
+                     System.out.println("NO");
+                     break;
+                 }
+                 else {
+                     System.out.println(bread);
+                     break;
+                 }
+             }
+             //when person with odd number of breads 
+             if(count%2==1) {
+                 count=1;
+                 bread=bread+2;
+                 continue;
+             }
+             count=0;//no extra bread given out
+         }
+     }
+     
+
+}
