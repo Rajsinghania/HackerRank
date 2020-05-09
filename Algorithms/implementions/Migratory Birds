@@ -1,0 +1,34 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+     public static void main(String []args){
+         
+           Scanner s= new Scanner(System.in);
+           int n=s.nextInt();
+           int a[]=new int[n];
+           //let's take another empty array for counting the frequency of elements
+           int a2[]=new int[6];
+           for(int i=0;i<a.length;i++) {
+               a[i]=s.nextInt();
+               a2[a[i]]++;
+           }
+          int maxtype=1;
+          //let's consider maxfreq=a2[1]
+          int maxfreq=a2[1];
+          for(int i=2;i<6;i++) {
+              if(a2[i]>maxfreq) {
+                  maxtype=i;
+                  maxfreq=a2[i];
+                }
+          }
+          System.out.println(maxtype);
+           
+    }
+}
