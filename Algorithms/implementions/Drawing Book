@@ -1,0 +1,14 @@
+ public static void main(String []args){
+		 
+	       Scanner s= new Scanner(System.in);
+	       int n=s.nextInt();
+	       int t=s.nextInt();
+	       
+	       int totalTurnPage=n/2;
+	       //turn pages from start (left side)
+         int leftToRight=t/2;
+         //(n/2-t/2) turn pages from end
+	       int min =Math.min(t/2,n/2-t/2);
+	       System.out.println(min);
+	       
+	      }
