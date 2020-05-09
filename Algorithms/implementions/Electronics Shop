@@ -1,0 +1,47 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+  public static void main (String[] args) {
+    Scanner s=new Scanner(System.in);
+    int b=s.nextInt();
+    int n=s.nextInt();
+    int m=s.nextInt();
+    long keyboard[]=new long[n];
+    long usb[]=new long[m];
+    
+    for(int i=0;i<n;i++) {
+         keyboard[i]=s.nextLong();
+    }
+
+    for(int i=0;i<m;i++) {
+        usb[i]=s.nextLong();
+    }
+    
+    price(keyboard,usb,b);
+    }
+
+
+     public static void maxprice(long keyboard[],long usb[],long b) {
+        
+        long sum=0;
+        for(int i=0;i<keyboard.length;i++) {
+            for(int j=0;j<usb.length;j++) {
+                if(keyboard[i]+usb[j]<=b){
+                    sum=Math.max(sum,keyboard[i]+usb[j]);
+                }
+            }
+        }
+        if(sum>=1){
+            System.out.println(sum);
+        }
+        else{
+            System.out.println("-1");
+        }
+        
+    }
+}
