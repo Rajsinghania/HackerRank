@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        ArrayList<Integer> list=new ArrayList<>();
+        int t=s.nextInt();
+        int k=s.nextInt();
+        int count=0;
+        int temp=0;
+        while(t>0) {
+            int x=s.nextInt();
+            for(int i=0;i<x;i=i+k) {
+                count++; //counting pages
+                for(int j=i+1;j<=k+i;j++) {
+                    list.add(j);
+                    if(list.contains(count) && j<=x) {
+                        temp++; //special problems
+                    }
+                    list.clear();
+                }
+                
+            }
+            t--;
+        }
+        System.out.println(temp);
+        
+    }
+}
